@@ -13,7 +13,7 @@ Contributions are welcome!
 
 ## Installation
 
-1. Download the update site from the [latest release](https://github.com/csabimf/awm-git/releases/latest).
+1. Download the update site *awm_git.zip* from the [latest release](https://github.com/csabimf/awm-git/releases/latest).
 2. Install as any other Eclipse plug-in, using *Help* → *Install New Software...*
 
 
