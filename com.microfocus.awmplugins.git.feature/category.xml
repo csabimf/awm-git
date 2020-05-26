@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <bundle id="com.microfocus.awmplugins.git" version="1.2.0.qualifier">
+      <category name="com.microfocus.awmplugins.feature.category"/>
+   </bundle>
+   <category-def name="com.microfocus.awmplugins.feature.category" label="Application Workflow Manager"/>
+</site>
