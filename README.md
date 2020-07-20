@@ -13,9 +13,13 @@ Contributions are welcome!
 
 ## System Requirements
 
-`git.exe` must be available on the `%PATH%`.
+1. [Micro Focus Enterprise Developer](https://www.microfocus.com/en-us/products/enterprise-developer/overview)
 
-You can get it from [git for windows](https://gitforwindows.org/).
+2. Git
+
+   `git.exe` must be available on the `%PATH%`.
+
+    You can get it from [git for windows](https://gitforwindows.org/).
 
 
 ## Installation
