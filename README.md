@@ -11,6 +11,13 @@ Features:
 Contributions are welcome!
 
 
+## System Requirements
+
+`git.exe` must be available on the `%PATH%`.
+
+You can get it from [git for windows](https://gitforwindows.org/).
+
+
 ## Installation
 
 1. Download the update site *awm_git.zip* from the [latest release](https://github.com/csabimf/awm-git/releases/latest).
