@@ -25,7 +25,10 @@ Contributions are welcome!
 ## Installation
 
 1. Download the update site *awm_git.zip* from the [latest release](https://github.com/csabimf/awm-git/releases/latest).
+
 2. Install as any other Eclipse plug-in, using *Help* → *Install New Software...*
+
+   You have to uncheck *Group items by category* for the plug-in to show up.
 
 
 ## Provided Tool Types
