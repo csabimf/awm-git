@@ -23,6 +23,7 @@ public class CommandExecutor {
 
         Map<String, String> environment = pb.environment();
         environment.put("GIT_TERMINAL_PROMPT", "0");
+        environment.put("GIT_ASKPASS", "");
 
         pb.command(buildCommand(executable, parameters));
         pb.redirectErrorStream(!separateStreams);
