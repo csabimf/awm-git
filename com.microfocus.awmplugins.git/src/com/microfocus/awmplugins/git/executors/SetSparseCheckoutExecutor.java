@@ -17,7 +17,7 @@ import com.microfocus.awm.model.toolexecution.IToolExecutor2;
 import com.microfocus.awm.model.toolexecution.IToolResult;
 import com.microfocus.awmplugins.git.PluginConstants;
 import com.microfocus.awmplugins.git.commands.GitException;
-import com.microfocus.awmplugins.git.commands.SparseCheckoutSet;
+import com.microfocus.awmplugins.git.commands.SparseCheckoutCommand;
 import com.microfocus.awmplugins.git.commands.builder.Git;
 import com.microfocus.awmplugins.git.commands.builder.SparseCheckoutBuilder;
 
@@ -26,12 +26,16 @@ public class SetSparseCheckoutExecutor implements IToolExecutor2 {
     @SuppressWarnings("unused")
     private static final String TOOL_ID = PluginConstants.FUNCTION_PACKAGE_ID + ".setSparseCheckout";
 
+    private static final String ATTRIBUTE_OPERATION = "operation";
+
     private static final String INPUT_REPOSITORY = "repository";
 
     private static final String INPUT_PATH = "path";
 
     @Override
     public IToolResult executeSingleProcessing(final IToolContext toolContext, final IProgressMonitor progressMonitor) throws TaurusToolException {
+        final String operation = (String) toolContext.getAttributeValue(ATTRIBUTE_OPERATION);
+
         final String repository = ToolUtility.getInputParameter(toolContext, INPUT_REPOSITORY, IStringInputParameter.class).getParameterValue();
 
         final SparseCheckoutBuilder builder = Git.repo(repository).sparseCheckout();
@@ -43,7 +47,15 @@ public class SetSparseCheckoutExecutor implements IToolExecutor2 {
             contents.add(path.getParameterValue());
         }
 
-        final SparseCheckoutSet command = builder.set().contents(contents).prepare();
+        SparseCheckoutCommand<Void> command = null;
+
+        if (operation.equals("Add")) {
+            command = builder.add().contents(contents).prepare();
+        } else if (operation.equals("Remove")) {
+            command = builder.remove().contents(contents).prepare();
+        } else {
+            command = builder.set().contents(contents).prepare();
+        }
 
         try {
             command.execute();

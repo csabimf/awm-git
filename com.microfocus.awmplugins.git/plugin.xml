@@ -409,6 +409,16 @@
                id="setSparseCheckout"
                label="Set Sparse Checkout"
                toolExecutor="com.microfocus.awmplugins.git.executors.SetSparseCheckoutExecutor">
+            <attribute
+                  category="Dynamic"
+                  customRestrictions="com.microfocus.awmplugins.git.executors.SetSparseCheckoutTypeRestrictions"
+                  id="operation"
+                  label="Operation"
+                  mandatory="true"
+                  modelLabel="true"
+                  multiLine="false"
+                  type="String">
+            </attribute>
             <inputParameter
                   cardinality="1..1"
                   id="repository"
